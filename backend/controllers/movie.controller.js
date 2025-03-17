@@ -1,5 +1,5 @@
 
-import { fetchFromIMDB } from "../services/imdb.service.js";
+import { fetchFromIMDB,fetchFromIMDBupcomin } from "../services/imdb.service.js";
 
 export async function getTrendingMovie(req, res) {
     try {
@@ -23,6 +23,23 @@ export async function getTrendingMovie(req, res) {
     }
 }
 
+
+export async function getTrendingmoviesMovie(req, res) {
+    try {
+        const data = await fetchFromIMDB("top250-movies");  
+        res.json({
+            success: true,
+            TopMovieslist: data,
+            
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "Internal server error",
+            error: error.message
+        });
+    }
+}
 
 export async function gettopMovies(req, res) {
     try {
@@ -59,6 +76,24 @@ export async function gettopBoxOfficeMovies(req, res) {
     }
 }
 
+
+export async function getupcomingMovies(req, res) {
+    try {
+        const data = await fetchFromIMDBupcomin("upcoming-releases");  
+       
+        res.json({
+            success: true,
+            UpcomingMovies: data,
+            
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "Internal server error",
+            error: error.message
+        });
+    }
+}
 
 
 export async function getMovieCast(req, res) {

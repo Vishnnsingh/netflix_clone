@@ -27,6 +27,88 @@ export const fetchFromIMDB = async (endpoint) => {
 
 
 
+
+
+export const fetchFromIMDBupcomin = async (endpoint) => {
+ 
+    const url = `https://${ENV_VARS.API_HOST}/imdb/${endpoint}`;
+    // console.log("Fetching from:", url);
+
+    const options = {
+        params: {
+            countryCode: 'US',
+            type: 'MOVIE'
+          },
+        headers: {
+            // "Accept": "application/json",
+            "x-rapidapi-key": ENV_VARS.API_KEY,
+            "x-rapidapi-host": "imdb236.p.rapidapi.com"
+        }
+    };
+
+    try {
+        const response = await axios.get(url, options);
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching data from IMDb:", error.message);
+        throw error;
+    }
+};
+
+
+export const fetchFromIMDBupcomingtv = async (endpoint) => {
+ 
+    const url = `https://${ENV_VARS.API_HOST}/imdb/${endpoint}`;
+    // console.log("Fetching from:", url);
+
+    const options = {
+        params: {
+            countryCode: 'US',
+            type: 'TV'
+          },
+        headers: {
+            // "Accept": "application/json",
+            "x-rapidapi-key": ENV_VARS.API_KEY,
+            "x-rapidapi-host": "imdb236.p.rapidapi.com"
+        }
+    };
+
+    try {
+        const response = await axios.get(url, options);
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching data from IMDb:", error.message);
+        throw error;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // const url = `https://imdb236.p.rapidapi.com/imdb/`;
 // console.log("Fetching from:", url);
 
