@@ -1,6 +1,6 @@
 // const express = require("express"); // commonjs
 import express from "express"; 
-
+import cors from "cors";
 import authRoutes from "./routes/auth.route.js"
 import movieRoutes from "./routes/movie.route.js"
 import tvRoutes from "./routes/tv.route.js"
@@ -15,7 +15,7 @@ import { protectRoute } from "./middleware/protectRoute.js";
 const app = express();
 
 const PORT = ENV_VARS.PORT
-
+app.use(cors());
 app.use(express.json()); // will allow us to parse rea.body
 app.use(cookieParser());
 
