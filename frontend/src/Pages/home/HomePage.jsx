@@ -6,9 +6,9 @@ import { userAuthstore } from '../../store/authUser';
 const HomePage = () => {
   const {user} = userAuthstore();
   return (
-   <div>
+   <>
     {user ? <HomeScreen /> : <AuthScreen />}
-   </div>
+   </>
   )
 } 
 

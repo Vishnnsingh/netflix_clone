@@ -1,17 +1,33 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { userAuthstore } from "../store/authUser";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login } = userAuthstore()
+  const { login } = userAuthstore();
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handeleLogin = (e) => {
     e.preventDefault();
     // console.log(email, password);
     login({ email, password})
+    navigate("/");
+    
   };
+
+  // const handeleLogin = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const isAuthenticated =  login({ email, password });
+  //     if (isAuthenticated) {
+  //       navigate("/"); // Redirect to home on success
+  //     } 
+  //   } catch (error) {
+  //     // console.error("Login failed", error);
+  //     // alert("Something went wrong. Please try again.");
+  //   }
+  // };
   return (
     
     <div className="h-screen w-full hero-bg">
@@ -60,10 +76,12 @@ const LoginPage = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-
-            <button className="w-full py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700">
+              
+              <button className="w-full py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700">
               Login
             </button>
+             
+            
           </form>
           <div className="text-center text-gray-400">
             Don't have an account ?{" "}
