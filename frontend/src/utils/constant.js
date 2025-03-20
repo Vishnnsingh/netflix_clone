@@ -1,7 +1,6 @@
-// export const API_END_POINT = "https://netflixauth.onrender.com/api/v1/user";
 
 // OMDb API configuration
-export const OMDB_API_KEY = "98167139";
+export const OMDB_API_KEY = "f7ab1647";
 export const OMDB_BASE_URL = "https://www.omdbapi.com/";
 
 // Movie categories for OMDb searches

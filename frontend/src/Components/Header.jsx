@@ -61,7 +61,7 @@ const Header = () => {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex ml-8 text-white">
-            {["browse", "tv-shows", "movies", "new-and-popular", "my-list"].map((path) => (
+            {["home", "movies","tv-shows",  "new-and-popular", "my-list"].map((path) => (
               <Link key={path} to={`/${path}`} className={`mx-3 hover:text-gray-300 transition-colors ${location.pathname === `/${path}` ? 'font-bold' : ''}`}>
                 {path.replace('-', ' ').toUpperCase()}
               </Link>

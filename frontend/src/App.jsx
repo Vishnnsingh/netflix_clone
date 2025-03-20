@@ -26,7 +26,7 @@ const AppRouter = (user) =>
         { path: "/", element: <HomePage />},
         { path: "/login", element: !user ? <LoginPage /> : <Navigate to="/"  />},
         { path: "/signup", element: !user ? <SignupPage /> : <Navigate to="/"   />},
-        { path: "/browse", element: !user ? <Browse /> : <Navigate to="/"   />},
+        { path: "/home", element: !user ? <Browse /> : <Navigate to="/"   />},
         { path: "/browse/:movieId", element: !user ? <MovieDetails /> : <Navigate to="/"   />},
         { path: "/search", element: !user ? <SearchResults /> : <Navigate to="/"   />},
         { path: "/tv-shows", element: !user ? <TVShows /> : <Navigate to="/"   />},

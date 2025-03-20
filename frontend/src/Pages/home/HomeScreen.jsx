@@ -8,10 +8,6 @@ import { BiInfoCircle } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import { FaSpinner } from 'react-icons/fa'
 import Header from '../../Components/Header'
-// import Header from '../../Components/Header'
-// console.log(Header);
-// import Navbar from '../../Components/Navbar'
-
 const HomeScreen = () => {
   const { logout } = userAuthstore()
 
@@ -33,10 +29,10 @@ const HomeScreen = () => {
               console.error('Error fetching featured movie:', error);
               // Fallback to a predefined featured movie
               setFeaturedMovie({
-                  id: "tt0111161",
-                  title: "The Shawshank Redemption",
-                  overview: "Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.",
-                  release_date: "1994-09-23"
+                  id: "tt9114286",
+                  title: "Black Panther: Wakanda Forever",
+                  overview: "Queen Ramonda, Shuri, M'Baku, Okoye and the Dora Milaje fight to protect Wakanda.",
+                  release_date: "2022"
               });
           } finally {
               setLoading(false);
@@ -93,8 +89,8 @@ const HomeScreen = () => {
                         </h1>
                         <div className="flex items-center text-gray-300 text-sm sm:text-base mb-2 sm:mb-4">
                             <span className="mr-3">{featuredMovie.release_date?.substring(0, 4)}</span>
-                            <span className="mr-3 border px-1 text-xs">PG-13</span>
-                            <span>2h 22m</span>
+                            <span className="mr-3 border px-1 text-xs">PG-10</span>
+                            <span>2h 41m</span>
                         </div>
                         <p className="text-white text-sm sm:text-base md:text-lg mb-4 sm:mb-6 line-clamp-3 drop-shadow-lg max-w-xl">
                             {featuredMovie.overview}
@@ -107,7 +103,7 @@ const HomeScreen = () => {
                                 <IoPlay className="mr-2 text-lg sm:text-xl" /> Play
                             </button>
                             <Link
-                                to={"/browse/" + featuredMovie.id}
+                                to={"/home/" + featuredMovie.id}
                                 className="flex items-center justify-center bg-gray-600 bg-opacity-70 text-white py-1.5 sm:py-2 px-4 sm:px-6 rounded-md font-bold hover:bg-opacity-90 transition-colors text-sm sm:text-base"
                             >
                                 <BiInfoCircle className="mr-2 text-lg sm:text-xl" /> More Info

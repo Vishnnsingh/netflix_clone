@@ -58,13 +58,18 @@ const Browse = () => {
       <div className="-mt-52 relative z-10 pb-16">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-8 md:space-y-12">
+          <MovieList title="Now Playing" movies={nowPlayingMovies} />
             <MovieList title="Popular on Netflix" movies={popularMovies} />
-            <MovieList title="Top Rated" movies={topRatedMovies} />
-            <MovieList title="Now Playing" movies={nowPlayingMovies} />
+            <MovieList title="Rated on Netflix" movies={topRatedMovies} />
+
+         
+           
           </div>
         </div>
       </div>
     </div>
+
+    
   );
 };
 

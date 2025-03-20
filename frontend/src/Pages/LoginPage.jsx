@@ -12,7 +12,7 @@ const LoginPage = () => {
     e.preventDefault();
     // console.log(email, password);
     login({ email, password})
-    navigate("/");
+    navigate("/home");
     
   };
 

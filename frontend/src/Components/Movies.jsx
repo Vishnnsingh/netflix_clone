@@ -62,9 +62,9 @@ const Movies = () => {
             <div className="relative z-10 pb-16 -mt-20">
                 <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="space-y-8 md:space-y-12">
-                        <MovieList title="Popular Movies" movies={popularMovies} />
-                        <MovieList title="Top Rated Movies" movies={topRatedMovies} />
-                        <MovieList title="Now Playing" movies={nowPlayingMovies} />
+                    <MovieList title="Now Playing" movies={nowPlayingMovies} />
+                   <MovieList title="Popular on Netflix" movies={popularMovies} />
+                   <MovieList title="Rated on Netflix" movies={topRatedMovies} />
                     </div>
                 </div>
             </div>

@@ -30,7 +30,7 @@ export const useNowPlayingMovies = () => {
                         }
 
                         const res = await axios.get(`${OMDB_BASE_URL}?apikey=${OMDB_API_KEY}&s=${searchTerm}&type=movie`, {
-                            timeout: 5000 // 5 second timeout
+                            timeout: 3000 // 5 second timeout
                         });
 
                         if (res.data && res.data.Response === "True" && res.data.Search) {
